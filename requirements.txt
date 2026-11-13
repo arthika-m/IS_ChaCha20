@@ -1,7 +1,4 @@
-
 Flask
 Flask-Cors
 pycryptodome
-
-pycryptodome
-flask
+gunicorn
