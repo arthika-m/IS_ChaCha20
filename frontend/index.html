@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaCha20 Cryptography Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🔐 CHACHA20 LAB</div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#workspace">Encrypt / Decrypt</a>
+        <a href="#learn">Learn</a>
+    </div>
+    <span class="status">● Learning Mode</span>
+</nav>
+
+<section class="hero" id="home">
+    <p class="tag">STREAM CIPHER · SYMMETRIC ENCRYPTION</p>
+    <h1>Explore the Science of <span>ChaCha20.</span></h1>
+    <p>Encrypt messages, decrypt ciphertext and understand every step.</p>
+    <a href="#workspace" class="primary-link">Start Exploring →</a>
+</section>
+
+<section class="workspace" id="workspace">
+
+    <div class="section-heading">
+        <p class="tag">INTERACTIVE WORKSPACE</p>
+        <h2>Try the <span>ChaCha20</span></h2>
+        <p>Perform independent encryption and decryption.</p>
+    </div>
+
+    <!-- ENCRYPTION SECTION -->
+
+    <div class="card">
+        <h3>01. Encryption Studio</h3>
+
+        <label>Enter Plaintext</label>
+        <textarea id="message"
+            placeholder="Enter your message..."></textarea>
+
+        <button class="encrypt-btn" onclick="encryptMessage()">
+            🔒 Encrypt Message
+        </button>
+
+        <label>Generated Secret Key</label>
+        <textarea id="encKey" readonly
+            placeholder="Generated key"></textarea>
+
+        <label>Generated Nonce</label>
+        <textarea id="encNonce" readonly
+            placeholder="Generated nonce"></textarea>
+
+        <label>Encrypted Ciphertext</label>
+        <textarea id="encCipher" readonly
+            placeholder="Encrypted ciphertext"></textarea>
+
+        <button class="secondary-btn" onclick="copyKey()">
+            Copy Secret Key
+        </button>
+
+        <button class="secondary-btn" onclick="copyNonce()">
+            Copy Nonce
+        </button>
+
+        <button class="secondary-btn" onclick="copyCipher()">
+            Copy Ciphertext
+        </button>
+    </div>
+
+
+    <!-- MANUAL DECRYPTION SECTION -->
+
+    <div class="card">
+        <h3>02. Decryption Studio</h3>
+
+        <p class="hint">
+            Enter the previously generated ciphertext, secret key
+            and nonce manually. These values are not transferred
+            automatically from the encryption section.
+        </p>
+
+        <label>Enter Encrypted Ciphertext</label>
+        <textarea id="decCipher"
+            placeholder="Paste your ciphertext here..."></textarea>
+
+        <label>Enter Secret Key</label>
+        <textarea id="decKey"
+            placeholder="Paste your secret key here..."></textarea>
+
+        <label>Enter Nonce</label>
+        <textarea id="decNonce"
+            placeholder="Paste your nonce here..."></textarea>
+
+        <button class="decrypt-btn" onclick="decryptMessage()">
+            🔓 Decrypt Message
+        </button>
+
+        <label>Decrypted Plaintext</label>
+        <textarea id="decrypted" readonly
+            placeholder="Original message appears here..."></textarea>
+
+        <button class="secondary-btn" onclick="clearDecryption()">
+            Clear Decryption Fields
+        </button>
+    </div>
+
+    <div id="status"></div>
+
+</section>
+
+<section class="learn" id="learn">
+    <div class="section-heading">
+        <p class="tag">UNDERSTAND THE CONCEPT</p>
+        <h2>How does <span>ChaCha20</span> work?</h2>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <span>01</span>
+            <h3>Initialization</h3>
+            <p>Creates the internal state using constants, key, counter and nonce.</p>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <h3>Quarter Round</h3>
+            <p>Uses addition, XOR and bit rotation operations.</p>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <h3>20 Rounds</h3>
+            <p>Performs ten double rounds to mix the internal state.</p>
+        </div>
+
+        <div class="step">
+            <span>04</span>
+            <h3>XOR Operation</h3>
+            <p>Combines plaintext with the generated keystream to produce ciphertext.</p>
+        </div>
+    </div>
+
+    <div class="formula">
+        <h3>ChaCha20 Formula</h3>
+        <p>Ciphertext = Plaintext XOR Keystream</p>
+        <p>Plaintext = Ciphertext XOR Keystream</p>
+    </div>
+</section>
+
+<footer>
+    Information Security Laboratory | ChaCha20 Algorithm
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
